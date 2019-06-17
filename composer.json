@@ -1,0 +1,32 @@
+{
+  "name": "Queo/Site",
+  "homepage": "https://www.homepage.com",
+  "description": "Website for some customer",
+  "license": "proprietary",
+  "config": {
+    "vendor-dir": "Packages/Libraries",
+    "bin-dir": "bin"
+  },
+  "require": {
+    "neos/neos": "~4.3.0",
+    "Queo/SitePackage": "@dev"
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall"
+    ],
+    "post-install-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+    "post-package-update": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall",
+    "post-package-install": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall"
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "DistributionPackages/*"
+    }
+  ],
+  "extra": {
+    "author": "Ralf Michael"
+  },
+  "minimum-stability": "dev"
+}

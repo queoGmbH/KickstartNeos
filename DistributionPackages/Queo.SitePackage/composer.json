@@ -1,0 +1,25 @@
+{
+  "description": "",
+  "type": "neos-site",
+  "require": {
+    "neos/neos": "*",
+    "neos/neos-ui": "^3.3",
+    "neos/fusion-afx": "^1.2",
+    "neos/redirecthandler-databasestorage": "^3.0",
+    "neos/redirecthandler-neosadapter": "^3.0",
+    "neos/redirecthandler-ui": "^1.1",
+    "neos/seo": "^3.0",
+    "yoast/yoast-seo-for-neos": "^0.2.2"
+  },
+  "name": "queo/sitepackage",
+  "autoload": {
+    "psr-4": {
+      "Queo\\SitePackage\\": "Classes/"
+    }
+  },
+  "extra": {
+    "neos": {
+      "package-key": "Queo.SitePackage"
+    }
+  }
+}
