@@ -1,0 +1,29 @@
+/**
+ * Root Fusion for the Sitepackage site
+ */
+
+prototype(Queo.SitePackage:DefaultPage) < prototype(Neos.Neos:Page) {
+    head {
+        stylesheets.site = Neos.Fusion:Template {
+            templatePath = 'resource://Queo.SitePackage/Private/Templates/Page/Default.html'
+            sectionName = 'stylesheets'
+        }
+
+        javascripts.site = Neos.Fusion:Template {
+            templatePath = 'resource://Queo.SitePackage/Private/Templates/Page/Default.html'
+            sectionName = 'headScripts'
+        }
+    }
+
+    body {
+        templatePath = 'resource://Queo.SitePackage/Private/Templates/Page/Default.html'
+        sectionName = 'body'
+
+        javascripts.site = Neos.Fusion:Template {
+            templatePath = 'resource://Queo.SitePackage/Private/Templates/Page/Default.html'
+            sectionName = 'bodyScripts'
+        }
+    }
+}
+
+include: **/*.fusion
