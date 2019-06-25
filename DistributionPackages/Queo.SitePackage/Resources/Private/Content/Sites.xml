@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <site name="Home" state="1" siteResourcesPackageKey="Queo.SitePackage" siteNodeName="home">
+  <nodes formatVersion="2.0">
+   <node identifier="45ce2939-0e3c-4e5b-b86d-4328b4c378f2" nodeName="home">
+    <variant sortingIndex="100" workspace="live" nodeType="Queo.SitePackage:Document.Page" version="1" removed="" hidden="" hiddenInIndex="">
+     <dimensions>
+      <language>de</language>
+     </dimensions>
+     <accessRoles __type="array"/>
+     <creationDateTime __type="object" __classname="DateTime">2019-06-25T16:05:02+00:00</creationDateTime>
+     <lastModificationDateTime __type="object" __classname="DateTime">2019-06-25T16:05:02+00:00</lastModificationDateTime>
+     <properties>
+      <uriPathSegment __type="string">home</uriPathSegment>
+      <isCornerstone __type="boolean"></isCornerstone>
+      <title __type="string">Home</title>
+     </properties>
+    </variant>
+    <node identifier="bf1bb435-9c23-a9f2-e877-93d6afcb465c" nodeName="main">
+     <variant sortingIndex="100" workspace="live" nodeType="Neos.Neos:ContentCollection" version="1" removed="" hidden="" hiddenInIndex="">
+      <dimensions>
+       <language>de</language>
+      </dimensions>
+      <accessRoles __type="array"/>
+      <creationDateTime __type="object" __classname="DateTime">2019-06-25T16:05:02+00:00</creationDateTime>
+      <lastModificationDateTime __type="object" __classname="DateTime">2019-06-25T16:05:02+00:00</lastModificationDateTime>
+      <properties/>
+     </variant>
+    </node>
+   </node>
+  </nodes>
+ </site>
+</root>
