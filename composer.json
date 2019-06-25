@@ -1,5 +1,5 @@
 {
-  "name": "Queo/Site",
+  "name": "queo/site",
   "homepage": "https://www.homepage.com",
   "description": "Website for some customer",
   "license": "proprietary",
@@ -9,7 +9,7 @@
   },
   "require": {
     "neos/neos": "~4.3.0",
-    "Queo/SitePackage": "@dev"
+    "queo/sitepackage": "@dev"
   },
   "scripts": {
     "post-update-cmd": [

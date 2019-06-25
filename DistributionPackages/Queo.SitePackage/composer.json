@@ -1,4 +1,5 @@
 {
+  "name": "queo/sitepackage",
   "description": "",
   "type": "neos-site",
   "require": {
@@ -11,7 +12,6 @@
     "neos/seo": "^3.0",
     "yoast/yoast-seo-for-neos": "^0.2.2"
   },
-  "name": "queo/sitepackage",
   "autoload": {
     "psr-4": {
       "Queo\\SitePackage\\": "Classes/"
