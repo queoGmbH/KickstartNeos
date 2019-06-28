@@ -8,11 +8,17 @@ prototype(Queo.SitePackage:Document.Page) < prototype(Neos.Neos:Page) {
         }
     }
 
-    body = Neos.Fusion:Component {
-        content = 'Hello World'
+    body = Queo.SitePackage:Component.Template.Default {
+        content = Neos.Fusion:Component {
+            main = Neos.Neos:ContentCollection {
+                nodePath = 'main'
+            }
 
-        renderer = afx`
-            {props.content}
-        `
+            renderer = afx`
+                <main class="main">
+                    {props.main}
+                </main>
+            `
+        }
     }
 }

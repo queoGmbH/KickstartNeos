@@ -1,0 +1,9 @@
+prototype(Queo.SitePackage:Component.Template.Default) < prototype(Neos.Fusion:Component) {
+    content = ''
+
+    renderer = afx`
+        <header>Header</header>
+        {props.content}
+        <footer>Footer</footer>
+    `
+}

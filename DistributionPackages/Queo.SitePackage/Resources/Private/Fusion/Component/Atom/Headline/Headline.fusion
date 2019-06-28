@@ -1,0 +1,8 @@
+prototype(Queo.SitePackage:Component.Atom.Headline) < prototype(Neos.Fusion:Component) {
+    tagName = 'h1'
+    title = ''
+
+    renderer = afx`
+        <Neos.Fusion:Tag tagName={props.tagName}>{props.title}</Neos.Fusion:Tag>
+    `
+}

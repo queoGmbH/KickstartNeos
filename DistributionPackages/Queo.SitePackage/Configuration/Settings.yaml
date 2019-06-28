@@ -1,4 +1,13 @@
 Neos:
+  Neos:
+    fusion:
+      autoInclude:
+        Queo.SitePackage: true
+    Ui:
+      frontendConfiguration:
+        defaultInlineEditor: 'ckeditor5'
+        hotkeys: ~
+
   ContentRepository:
     contentDimensions:
       'language':
