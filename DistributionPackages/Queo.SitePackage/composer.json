@@ -10,6 +10,7 @@
     "neos/redirecthandler-neosadapter": "^3.0",
     "neos/redirecthandler-ui": "^1.1",
     "neos/seo": "^3.0",
+    "carbon/includeassets": "^3.5",
     "yoast/yoast-seo-for-neos": "^0.2.2"
   },
   "autoload": {

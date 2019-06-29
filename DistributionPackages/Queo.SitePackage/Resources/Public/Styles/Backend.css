@@ -1,0 +1,6 @@
+/*!
+ * Queo.SitePackage - created by Ralf Michael
+ * @link https://www.homepage.com
+ */
+@charset "UTF-8";body>main [data-__neos-node-contextpath]:empty{margin:2rem auto}body>main :empty[data-__neos-node-contextpath]:before{content:"Hier klicken um Inhalt hinzuzufügen"}body>main [data-__neos-node-contextpath]:empty{margin:250px auto;box-shadow:0 0 0 .5em #fff,0 0 0 calc(.5em + 2px) rgba(0,0,0,.2);min-height:0;max-width:calc(100vw - 60px);padding:0}
+/*# sourceMappingURL=Backend.css.map */

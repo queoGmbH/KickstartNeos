@@ -1,0 +1,15 @@
+Carbon:
+  Image:
+    dummy:
+      color: '#970C1D'
+  IncludeAssets:
+    GoogleFonts: Ubuntu:300,400,400i
+    Packages:
+      aa_Theme:
+        General:
+          Head:
+#            - Main.js[defer]
+            - Main.css
+        Backend:
+          Head:
+            - Backend.css
