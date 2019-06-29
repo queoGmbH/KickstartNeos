@@ -1,0 +1,7 @@
+# Configuration for the monocle styleguide
+# http://127.0.0.1:8081/monocle/preview/module/
+
+Sitegeist:
+  Monocle:
+    hiddenPrototypeNamePatterns:
+      - 'Carbon.IncludeAssets:*'

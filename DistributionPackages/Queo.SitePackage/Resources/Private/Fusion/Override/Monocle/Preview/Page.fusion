@@ -1,0 +1,18 @@
+prototype(Sitegeist.Monocle:Preview.Page) {
+    head {
+        stylesheets.main =  Neos.Fusion:Tag {
+            tagName = 'link'
+            attributes.rel = 'stylesheet'
+            attributes.href = Neos.Fusion:ResourceUri {
+                path = 'resource://Queo.SitePackage/Public/Styles/Main.css'
+            }
+        }
+
+        javascripts.main = Neos.Fusion:Tag {
+            tagName = 'script'
+            attributes.src = Neos.Fusion:ResourceUri {
+                path = 'resource://Queo.SitePackage/Public/Scripts/Main.js'
+            }
+        }
+    }
+}

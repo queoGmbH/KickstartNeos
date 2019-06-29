@@ -9,8 +9,11 @@
     "neos/redirecthandler-databasestorage": "^3.0",
     "neos/redirecthandler-neosadapter": "^3.0",
     "neos/redirecthandler-ui": "^1.1",
-    "neos/seo": "^3.0",
+
     "carbon/includeassets": "^3.5",
+    "sitegeist/monocle": "^6.0",
+
+    "neos/seo": "^3.0",
     "yoast/yoast-seo-for-neos": "^0.2.2"
   },
   "autoload": {

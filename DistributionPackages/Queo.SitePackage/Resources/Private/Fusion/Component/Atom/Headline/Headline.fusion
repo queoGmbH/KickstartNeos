@@ -1,4 +1,20 @@
 prototype(Queo.SitePackage:Component.Atom.Headline) < prototype(Neos.Fusion:Component) {
+    # styleguide annotation
+    @styleguide {
+        title = 'Atom - Überschrift'
+        description = ''
+        props {
+            title = 'Hello World'
+        }
+        propSets {
+            headline-2 {
+                tagName = 'h2'
+                title = 'Alternate styleguide content for h2'
+            }
+        }
+    }
+
+    # fusion properties
     tagName = 'h1'
     title = ''
 
