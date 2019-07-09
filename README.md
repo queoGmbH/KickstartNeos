@@ -8,28 +8,36 @@ composer install with docker
 
 ```
 docker run -v %cd%:/app --rm --interactive composer install
-
-docker-compose build
-
-docke´-compose up -d
 ```
 
-after that, go to locolhost:8081
 
-to get the password, type
+build and start the docker image (prepare a Dockerfile from your local Dockerfile dealer)
+```
+docker-compose build
+
+docker-compose up -d
+```
+
+
+After that, go to locolhost:8081, which will lead you to a passwort prompt. To get the password, type
 ```
 docker-compose exec neos cat /app/Data/SetupPassword.txt
 ```
 
 
-after that comes mariadb config stuff
+After that comes some mariadb config shizzle (get config data from your local mariadb config guru).
 
 
-then there is an error and you type
+Then there is an error and you go into your hackerman mode and type:
 ```
 docker-compose exec neos /app/flow doctrine:create
 ```
+After the command finishes, go back to localhost and change the url to `step=2` (#Hackerman)
 
-after that go back to localhost and change the url to step=2 (#Hackerman)
 
-straight forward from there on
+
+The rest is pretty much straight forward from there on:
+Create a Username + Password
+Click 'Next' a few times
+
+Tadaa, your now at your local Neos back-end
