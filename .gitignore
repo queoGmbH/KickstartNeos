@@ -102,4 +102,3 @@ __*
 
 # Docker stuff
 /Dockerfile
-/docker-compose.yml
