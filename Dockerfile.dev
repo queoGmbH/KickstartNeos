@@ -9,8 +9,6 @@ RUN apt-get update \
     && docker-php-ext-install pdo_mysql \
     # redis
     && pecl install redis && docker-php-ext-enable redis \
-	# intl
-	&& pecl configure intl && pecl install intl \
     # cleanup
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 

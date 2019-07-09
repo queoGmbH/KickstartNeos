@@ -22,7 +22,7 @@ services:
       - 8081:8081
   # DB
   db:
-    image: mariadb:10.4
+    image: mariadb:10.3
     environment:
       MYSQL_ROOT_PASSWORD: 'db'
     volumes:
