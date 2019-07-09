@@ -98,3 +98,8 @@ __*
 /Web/_Resources
 /Web/index.php
 /Web/robots.txt
+
+
+# Docker stuff
+/Dockerfile
+/docker-compose.yml
