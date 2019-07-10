@@ -3,16 +3,18 @@
 // - the node has all necessary meta data for the Backend to work
 prototype(Queo.SitePackage:Content.Alert) < prototype(Neos.Neos:ContentComponent) {
 
-    // this is an "Eel Expression" (Eel == Embedded Expression Language)
-    // q(node).property('...') is like in jQuery $(node).property('...')
-    //
-    // "node" is a so-called "context variable", which ALWAYS points to the CURRENTLY RENDERED NODE.
-    style = ${q(node).property('style')}
+    // die folgende Zeile *instanziiert* die Komponente, und man kann diese Instanz konfigurieren
+    renderer = Queo.SitePackage:Component.Atom.Alert {
 
-    // renderer specifies the markup of the component
-    renderer = afx`
-        <div class={"alert alert-" + props.style} role="alert">
-            <Neos.Neos:Editable property="message" />
-        </div>
-    `
+        // hier sagen wir: "die Content-Eigenschaft ist inline editierbar"
+        content = Neos.Neos:Editable {
+            property = "message"
+        }
+
+        // this is an "Eel Expression" (Eel == Embedded Expression Language)
+        // q(node).property('...') is like in jQuery $(node).property('...')
+        //
+        // "node" is a so-called "context variable", which ALWAYS points to the CURRENTLY RENDERED NODE.
+        style = ${q(node).property('style')}
+    }
 }
