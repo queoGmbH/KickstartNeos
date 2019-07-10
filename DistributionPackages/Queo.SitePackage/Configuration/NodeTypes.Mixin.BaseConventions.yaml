@@ -1,0 +1,12 @@
+'Queo.SitePackage:Mixin.BaseConventions':
+  abstract: true
+
+  options:
+    fusion:
+      prototypeGenerator: null
+
+  ui:
+    inspector:
+      groups:
+        default:
+          label: ''

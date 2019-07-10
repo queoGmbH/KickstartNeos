@@ -1,0 +1,43 @@
+'Queo.SitePackage:Content.Carousel':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Queo.SitePackage:Mixin.BaseConventions': true
+
+  ui:
+    label: 'Carousel'
+    position: 10
+    icon: 'icon-images'
+
+  childNodes:
+    collection:
+      type: Neos.Neos:ContentCollection
+
+'Queo.SitePackage:Content.CarouselItem':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Queo.SitePackage:Mixin.BaseConventions': true
+
+  ui:
+    label: 'CarouselItem'
+    position: 10
+    icon: 'icon-image'
+
+  properties:
+    category:
+      type: string
+      ui:
+        label: 'Category'
+        inspector:
+          group: 'default'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              abstract:
+                label: 'Abstract'
+              animals:
+                label: 'Animals'
+              people:
+                label: 'People'
+              nature:
+                label: 'Nature'
+          reloadIfChanged: true

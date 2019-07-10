@@ -1,0 +1,10 @@
+prototype(Queo.SitePackage:Content.Alert) < prototype(Neos.Neos:ContentComponent) {
+
+    renderer = Queo.SitePackage:Component.Atom.Alert {
+        style = ${q(node).property('style')}
+
+        text = Neos.Neos:Editable {
+            property = 'text'
+        }
+    }
+}

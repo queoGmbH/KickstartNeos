@@ -1,0 +1,34 @@
+prototype(Queo.SitePackage:Component.Atom.Carousel) < prototype(Neos.Fusion:Component) {
+
+    categories = ''
+
+    @styleguide {
+        title = 'Atom - Slider'
+        description = ''
+        props {
+            categories {
+                0.catetory = 'sport'
+                1.category = 'abstract'
+                2.category = 'animals'
+            }
+        }
+    }
+
+    renderer = afx`
+        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                {props.categories}
+            </div>
+        </div>
+    `
+}
+
+prototype(Queo.SitePackage:Component.Atom.CarouselItem) < prototype(Neos.Fusion:Component) {
+    isFirst = false
+
+    renderer = afx`
+        <div class={"carousel-item " + (props.isFirst ? "active" : "")}>
+            <img class="d-block w-100" src={"http://lorempixel.com/800/400/" + props.category + "/1"} />
+        </div>
+    `
+}

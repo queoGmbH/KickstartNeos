@@ -1,15 +1,12 @@
 'Queo.SitePackage:Content.Alert':
   superTypes:
     'Neos.Neos:Content': true
+    'Queo.SitePackage:Mixin.BaseConventions': true
+
   ui:
     label: 'Alertbox'
     position: 10
-    icon: 'fas fa-radiation'
-    inspector:
-      groups:
-        alertOptions:
-          label: 'Alert'
-          icon: 'fas fa-radiation'
+    icon: 'icon-radiation'
 
   properties:
     style:
@@ -17,4 +14,45 @@
       ui:
         label: 'Stil'
         inspector:
-          group: 'alertOptions'
+          group: 'default'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              primary:
+                label: 'Primary'
+                icon: 'icon-angle-double-up'
+              secondary:
+                label: 'Secondary'
+                icon: 'icon-angle-up'
+              success:
+                label: 'Success'
+                icon: 'icon-thumbs-up'
+              danger:
+                label: 'Danger'
+                icon: 'icon-skull-crossbones'
+              warning:
+                label: 'Warning'
+                icon: 'icon-exclamation-triangle'
+              info:
+                label: 'Info'
+                icon: 'icon-info'
+              light:
+                label: 'Light'
+                icon: 'icon-sun'
+              dark:
+                label: 'Dark'
+                icon: 'icon-moon'
+        reloadIfChanged: true
+
+    text:
+      type: string
+      ui:
+        label: 'Text'
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: 'Replace by your message...'
+            formatting:
+              strong: true
+              em: true
+        reloadIfChanged: true

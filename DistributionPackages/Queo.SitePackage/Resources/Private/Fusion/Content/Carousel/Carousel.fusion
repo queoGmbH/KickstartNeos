@@ -1,0 +1,16 @@
+prototype(Queo.SitePackage:Content.Carousel) < prototype(Neos.Neos:ContentComponent) {
+
+    renderer = Queo.SitePackage:Component.Atom.Carousel {
+        categories = Neos.Neos:ContentCollection {
+            nodePath = 'collection'
+        }
+    }
+}
+
+prototype(Queo.SitePackage:Content.CarouselItem) < prototype(Neos.Neos:ContentComponent) {
+
+    renderer = Queo.SitePackage:Component.Atom.CarouselItem {
+        category = ${q(node).property('category')}
+        isFirst = ${q(node).prevAll().count() == 0}
+    }
+}

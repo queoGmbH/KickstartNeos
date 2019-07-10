@@ -1,0 +1,33 @@
+prototype(Queo.SitePackage:Component.Atom.Alert) < prototype(Neos.Fusion:Component) {
+
+    style = ""
+    content = ""
+
+    @styleguide {
+        title = 'Atom - Alert'
+        description = ''
+        props {
+            style = 'primary'
+            text = 'Replace by your message...'
+        }
+        propSets {
+            primary.style = 'primary'
+            secondary.style = 'secondary'
+            success.style = 'success'
+            danger.style = 'danger'
+            warning.style = 'warning'
+            info.style = 'info'
+            light.style = 'light'
+            dark.style = 'dark'
+
+        }
+    }
+
+    renderer = afx`
+        <div class={"alert alert-" + props.style} role="alert">
+            {props.text}
+        </div>
+    `
+
+    @if.isTrue = ${this.text}
+}
