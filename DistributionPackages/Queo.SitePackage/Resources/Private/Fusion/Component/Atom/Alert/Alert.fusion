@@ -1,0 +1,31 @@
+// RULES for Components:
+// - we do not use "neos specifics"; we do not know anything about nodes.
+// - we are not allowed to use ContentComponent; but only Neos.Fusion:Component
+// - we do not use Eel here
+prototype(Queo.SitePackage:Component.Atom.Alert) < prototype(Neos.Fusion:Component) {
+    content = ""
+    style = ""
+
+    # styleguide annotation für Monocle
+    @styleguide {
+        title = 'Atom - Alert'
+        description = ''
+        props {
+            style = 'primary'
+            content = 'Mein Text'
+        }
+        propSets {
+            secondary-2 {
+                style = 'secondary'
+                content = "alternative text"
+            }
+        }
+    }
+
+    // renderer specifies the markup of the component
+    renderer = afx`
+        <div class={"alert alert-" + props.style} role="alert">
+            {props.content}
+        </div>
+    `
+}
