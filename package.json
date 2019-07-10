@@ -53,7 +53,9 @@
     "optimizeSvg": "yarn gulp optimizeSvg",
     "showConfig": "yarn gulp showConfig"
   },
-  "dependencies": {},
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
