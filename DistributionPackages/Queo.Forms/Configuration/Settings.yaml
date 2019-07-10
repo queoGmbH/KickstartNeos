@@ -2,3 +2,9 @@ Neos:
   Fusion:
     defaultContext:
       'Queo.Forms': 'Queo\Forms\Eel\FormHelper'
+
+Queo:
+  Forms:
+    baseUrl: 'https://your-url-to-forms-endpoint/api/v1'
+    requestHeaders: {}
+      #your-auth-key: your-value
