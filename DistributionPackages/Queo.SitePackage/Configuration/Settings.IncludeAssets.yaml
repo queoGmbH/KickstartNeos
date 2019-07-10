@@ -8,7 +8,7 @@ Carbon:
       aa_Theme:
         General:
           Head:
-#            - Main.js[defer]
+            - DistributionPackages/Queo.SitePackage/Resources/Private/Assets/Main.js[defer]
             - Main.css
         Backend:
           Head:
