@@ -1,0 +1,3 @@
+//prototype(Queo.SitePackage:Content.Alert) < prototype(Neos.Fusion:Value) {
+//    value = "Hallo Welt 2"
+//}

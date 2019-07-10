@@ -1,6 +1,12 @@
 'Queo.SitePackage:Content.Alert':
   superTypes:
     'Neos.Neos:Content': true
+
+  # Disable fusion prototype generator
+  options:
+    fusion:
+      prototypeGenerator: null
+
   ui:
     label: 'Alertbox'
     position: 10
