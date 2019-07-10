@@ -6,10 +6,9 @@ prototype(Queo.SitePackage:Component.Atom.Carousel) < prototype(Neos.Fusion:Comp
         title = 'Atom - Slider'
         description = ''
         props {
-            categories {
-                0.catetory = 'sport'
-                1.category = 'abstract'
-                2.category = 'animals'
+            categories = Queo.SitePackage:Component.Atom.CarouselItem {
+                isFirst = true
+                category = 'abstract'
             }
         }
     }
@@ -25,6 +24,7 @@ prototype(Queo.SitePackage:Component.Atom.Carousel) < prototype(Neos.Fusion:Comp
 
 prototype(Queo.SitePackage:Component.Atom.CarouselItem) < prototype(Neos.Fusion:Component) {
     isFirst = false
+    category = 'abstract'
 
     renderer = afx`
         <div class={"carousel-item " + (props.isFirst ? "active" : "")}>
