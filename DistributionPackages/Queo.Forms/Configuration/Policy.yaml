@@ -1,0 +1,11 @@
+privilegeTargets:
+  Neos\Flow\Security\Authorization\Privilege\Method\MethodPrivilege:
+    'Queo.Forms:FormSubmission':
+      matcher: 'method(Queo\Forms\Controller\FormSubmissionController->(submit)Action())'
+
+roles:
+  'Neos.Flow:Everybody':
+    privileges:
+      -
+        privilegeTarget: 'Queo.Forms:FormSubmission'
+        permission: GRANT

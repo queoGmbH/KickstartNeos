@@ -14,6 +14,7 @@ prototype(Queo.Forms:Form) < prototype(Neos.Fusion:Component) {
         <form method="post" action={props.formAction}>
             <input type="hidden" name="unique_hash" value={props.formDefinition.form.unique_hash} />
             <Queo.Forms:FieldListRenderer fieldList={props.formDefinition.form.form_fields} />
+            <button type="submit">Abschicken</button>
         </form>
     `
 

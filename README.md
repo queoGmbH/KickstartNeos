@@ -18,6 +18,8 @@
 * Node Type Definition Referenz: https://neos.readthedocs.io/en/stable/CreatingASite/NodeTypes/NodeTypeDefinition.html
 
 
+* Wie debugge ich Neos/Flow: Talk sehr sehenswert: https://docs.neos.io/cms/manual/debugging
+
 ## AGENDA
 
 * Erstellen eines "einfachen" Node Types, bspw. basierend auf Bootstrap
