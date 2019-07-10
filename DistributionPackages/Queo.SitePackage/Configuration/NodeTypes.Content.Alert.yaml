@@ -9,12 +9,41 @@
     icon: 'fas fa-radiation'
 
   properties:
+    message:
+      type: string
+      defaultValue: 'Type message here!'
+
     style:
       type: string
+      defaultValue: 'primary'
+
       ui:
         label: 'Stil'
         inspector:
           group: 'default'
+
+          # Use SelectBox Editor
+          #https://neos.readthedocs.io/en/stable/References/PropertyEditorReference.html#property-type-string-array-string-selectboxeditor-dropdown-select-editor
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              primary:
+                label: 'primary'
+              secondary:
+                label: 'secondary'
+              success:
+                label: 'success'
+              danger:
+                label: 'danger'
+              warning:
+                label: 'warning'
+              info:
+                label: 'info'
+              light:
+                label: 'light'
+              dark:
+                label: 'dark'
+
 
         # refresht nur das einzelne Inhaltselement;
         # manchmal ist es auch hilfreich "reloadPageIfChanged" zu verwenden und die gesamte Seite
