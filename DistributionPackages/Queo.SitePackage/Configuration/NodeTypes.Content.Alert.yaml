@@ -1,0 +1,17 @@
+'Queo.SitePackage:Content.Alert':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: 'Alertbox'
+    position: 10
+    icon: 'fas fa-radiation'
+
+  properties:
+    style:
+      type: string
+
+    text:
+      type: string
+      defaultValue: 'Überschrift'
+      ui:
+        inlineEditable: true
