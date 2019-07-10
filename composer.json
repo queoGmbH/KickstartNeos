@@ -9,7 +9,8 @@
   },
   "require": {
     "neos/neos": "~4.3.0",
-    "queo/sitepackage": "@dev"
+    "queo/sitepackage": "@dev",
+    "queo/forms": "@dev"
   },
   "scripts": {
     "post-update-cmd": [

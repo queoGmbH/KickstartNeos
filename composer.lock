@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "930fb81a3d40ca788277cdf245a29cd7",
+    "content-hash": "d792ecd15e796cd6da509cbad055b713",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -4039,6 +4039,29 @@
             "time": "2017-10-23T01:57:42+00:00"
         },
         {
+            "name": "queo/forms",
+            "version": "dev-workshop",
+            "dist": {
+                "type": "path",
+                "url": "DistributionPackages/Queo.Forms",
+                "reference": "0b680455c58368e890a32df8bd1eb9394a471c68"
+            },
+            "require": {
+                "neos/neos": "*"
+            },
+            "type": "neos-package",
+            "extra": {
+                "neos": {
+                    "package-key": "Queo.Forms"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Queo\\Forms\\": "Classes/"
+                }
+            }
+        },
+        {
             "name": "queo/sitepackage",
             "version": "dev-master",
             "dist": {
@@ -4844,12 +4867,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/CarbonPackages/Carbon.Gulp.git",
-                "reference": "58a31723a4cd525c10b9b83260a2fb782588f186"
+                "reference": "754886fe9286c106cf6c10d17c4363d6d16e4555"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CarbonPackages/Carbon.Gulp/zipball/58a31723a4cd525c10b9b83260a2fb782588f186",
-                "reference": "58a31723a4cd525c10b9b83260a2fb782588f186",
+                "url": "https://api.github.com/repos/CarbonPackages/Carbon.Gulp/zipball/754886fe9286c106cf6c10d17c4363d6d16e4555",
+                "reference": "754886fe9286c106cf6c10d17c4363d6d16e4555",
                 "shasum": ""
             },
             "require": {
@@ -4881,13 +4904,14 @@
                 "carbon",
                 "pipeline"
             ],
-            "time": "2019-07-09T11:46:10+00:00"
+            "time": "2019-07-10T08:00:30+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
         "queo/sitepackage": 20,
+        "queo/forms": 20,
         "carbon/gulp": 20
     },
     "prefer-stable": false,

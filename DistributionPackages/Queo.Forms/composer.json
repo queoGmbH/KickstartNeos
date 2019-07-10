@@ -1,0 +1,18 @@
+{
+  "name": "queo/forms",
+  "description": "",
+  "type": "neos-package",
+  "require": {
+    "neos/neos": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Queo\\Forms\\": "Classes/"
+    }
+  },
+  "extra": {
+    "neos": {
+      "package-key": "Queo.Forms"
+    }
+  }
+}

@@ -12,6 +12,7 @@
 
     "carbon/includeassets": "^3.5",
     "sitegeist/monocle": "^6.0",
+    "queo/forms": "*",
 
     "neos/seo": "^3.0",
     "yoast/yoast-seo-for-neos": "^0.2.2"

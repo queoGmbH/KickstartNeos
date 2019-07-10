@@ -1,0 +1,21 @@
+'Queo.SitePackage:Content.Form':
+  superTypes:
+    'Neos.Neos:Content': true
+    'Queo.SitePackage:Mixin.BaseConventions': true
+
+  ui:
+    label: 'externes Formular'
+    position: 10
+    icon: 'fas fa-heading'
+  properties:
+    formId:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Formular-ID (bspw. 2)'
+        inspector:
+          group: default
+        help:
+          message: |
+            Hallo
+            Welt
