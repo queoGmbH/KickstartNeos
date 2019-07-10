@@ -1,21 +1,12 @@
 'Queo.SitePackage:Content.Alert':
   superTypes:
     'Neos.Neos:Content': true
-
-  # Disable fusion prototype generator
-  options:
-    fusion:
-      prototypeGenerator: null
+    'Queo.SitePackage:Mixin.BaseConventions': true
 
   ui:
     label: 'Alertbox'
     position: 10
     icon: 'fas fa-radiation'
-    inspector:
-      groups:
-        alertOptions:
-          label: 'Alert'
-          icon: 'fas fa-radiation'
 
   properties:
     style:
@@ -23,4 +14,4 @@
       ui:
         label: 'Stil'
         inspector:
-          group: 'alertOptions'
+          group: 'default'

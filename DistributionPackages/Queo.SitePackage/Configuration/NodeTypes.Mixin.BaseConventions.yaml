@@ -1,0 +1,16 @@
+# EMPFEHLUNG: diese Base Conventions mixins NICHT in ein "Queo.Core" Paket ziehen, sondern im Boilerplate lassen,
+#             da sich die Konventionen immer mal aktualisieren können; und man von Projekt zu Projekt dazu lernt.
+'Queo.SitePackage:Mixin.BaseConventions':
+  abstract: true
+
+  # Disable fusion prototype generator
+  options:
+    fusion:
+      prototypeGenerator: null
+
+  # add "default" group with empty label
+  ui:
+    inspector:
+      groups:
+        default:
+          label: ''
