@@ -28,4 +28,18 @@ prototype(Queo.SitePackage:Component.Atom.Alert) < prototype(Neos.Fusion:Compone
             {props.content}
         </div>
     `
+
+    # Meta-Eigenschaften beginnen mit "@", wie oben bspw. "@styleguide"
+    # weitere Meta-Eigenschaften sind:
+    # @process -> "stdWrap in einfacher" ;)
+    # @if -> Soll Komponente gerendert werden oder nicht?
+    # HINWEIS: nach @if oder @process ist ein Key notwendig; d.h.
+    # @if = ${} funktioniert NICHT; man braucht bspw. @if.IRGENDWAS = ${}
+    #
+    # Bei "if" finde ich "@if.isTrue" am lesbarsten.
+
+    # Folgende Zeile sagt: "nur rendern, wenn "content"-Eigenschaft nicht leer ist"
+    @if.isTrue = ${this.content}
+
+
 }

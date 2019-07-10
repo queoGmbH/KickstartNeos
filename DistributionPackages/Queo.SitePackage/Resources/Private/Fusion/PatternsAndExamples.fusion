@@ -1,0 +1,53 @@
+##############################################
+##############################################
+####                                      ####
+####     Patterns and examples; not used on the page ####
+####                                      ####
+##############################################
+##############################################
+
+prototype(Foo:Slider) < prototype(Neos.Fusion:Component) {
+    // 1) äußere API
+    // <Foo:Slider slides={....} currentPage=1 />
+    //
+    slides = ${[]}
+    currentPage = 0
+
+    // verfügbarmachen der lokalen "slides"-Variable in ALLEN Subkomponenten (verschachtelt)
+    @context.slides = ${this.slides}
+
+
+    // 2) interne Implementierung
+    renderer = afx`
+        ....
+    `
+    // es kann sein, dass AFX nicht "ausreicht"
+
+    // -> wir benötigen weitere Prototypen
+    renderer = Neos.Fusion:Case {
+        noSlides {
+            condition = ${slides}
+        }
+    }
+}
+
+
+prototype(Foo:Slider.Slide) < prototype(Neos.Fusion:Component) {
+    // ANNAHME: diese Komponente "klebt" immer unterhalb von Slider
+    // -> ich kann davon ausgehen, dass es die Variable "slides" im Context verfügbar ist.
+}
+
+
+# Neos.Fusion:Component ist relativ neu, um das "React-Paradigma" zu verankern.
+#
+# "nimm alle deine Eigenschaften, stecke sie in die Kontext-Variable "props" rein; und rendere den "renderer"
+# mit dem neuen kontext.
+prototype(Foo:Slider.Slide) < prototype(Neos.Fusion:Component) {
+    foo = "foo"
+    # available as {props.foo} -> Möglichkeit, verschachtelt zuzugreifen
+    # "Arbeiten wie mit React-Komponenten"
+    renderer = afx`
+        {props.foo}
+    `
+}
+
