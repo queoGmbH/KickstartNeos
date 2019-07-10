@@ -1,10 +1,20 @@
 prototype(Queo.Forms:Form) < prototype(Neos.Fusion:Component) {
     formId = ""
-
-
     @context.formDefinition = ${Queo.Forms.fetchForm(this.formId)}
 
-    renderer = afx`
-        Mein Formular {props.formId}
-    `
+    renderer = Neos.Fusion:Loop {
+        items = ${formDefinition.form.form_fields}
+        itemName = "field"
+
+        # wir benötigen Möglichkeit, einen Prototypen "dynamisch" zu instanziieren -> Neos.Fusion:Renderer
+        # OPTION: Neos.Fusion:CanRender fürs Error Handling
+        itemRenderer = Neos.Fusion:Renderer {
+            type = ${'Queo.Forms:Field.' + String.firstLetterToUpperCase(field.type)}
+
+            element.attributes = ${field.attributes}
+            element.childFields = ${field.child_fields}
+            element.choices = ${field.choices}
+        }
+    }
 }
+
