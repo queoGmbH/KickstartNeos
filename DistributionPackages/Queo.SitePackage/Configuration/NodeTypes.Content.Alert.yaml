@@ -15,4 +15,8 @@
         label: 'Stil'
         inspector:
           group: 'default'
+
+        # refresht nur das einzelne Inhaltselement;
+        # manchmal ist es auch hilfreich "reloadPageIfChanged" zu verwenden und die gesamte Seite
+        # neu zu laden (bspw. bei der Verwendung von viel JS auf der Seite)
         reloadIfChanged: true
