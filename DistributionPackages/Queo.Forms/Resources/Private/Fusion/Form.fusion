@@ -1,8 +1,20 @@
 prototype(Queo.Forms:Form) < prototype(Neos.Fusion:Component) {
     formId = ""
-    @context.formDefinition = ${Queo.Forms.fetchForm(this.formId)}
+    campaignId = ""
+    client = "sn"
 
-    renderer = Queo.Forms:FieldListRenderer {
-        fieldList = ${formDefinition.form.form_fields}
+    formDefinition = ${Queo.Forms.fetchForm(this.formId)}
+    formAction = Neos.Fusion:UriBuilder {
+        package = 'Queo.Forms'
+        controller = 'FormSubmission'
+        action = 'submit'
     }
+
+    renderer = afx`
+        <form method="post" action={props.formAction}>
+            <input type="hidden" name="unique_hash" value={props.formDefinition.form.unique_hash} />
+            <Queo.Forms:FieldListRenderer fieldList={props.formDefinition.form.form_fields} />
+        </form>
+    `
+
 }

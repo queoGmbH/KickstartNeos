@@ -1,0 +1,8 @@
+-
+  name: 'Form Submit'
+  uriPattern: 'form/submit'
+  defaults:
+    '@package': 'Queo.Forms'
+    '@controller': 'FormSubmission'
+    '@action': 'submit'
+    '@format': 'html'

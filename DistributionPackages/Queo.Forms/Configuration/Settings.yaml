@@ -7,7 +7,19 @@ Neos:
     fusion:
       autoInclude:
         Queo.Forms: true
-
+  Flow:
+    mvc:
+      # Defines routes that should be included after existing routes defined in the main Routes.yaml (if any)
+      # Note: This only allows to include existing Routes.yaml files from other packages, you can't adjust the routes via Settings.
+      #
+      # Syntax:
+      # 'Some.Package': true
+      # 'SomeOther.Package':
+      #   position: 'after Some.Package'
+      #
+      routes:
+        'Queo.Forms':
+          position: 'start'
 Queo:
   Forms:
     baseUrl: 'https://your-url-to-forms-endpoint/api/v1'
