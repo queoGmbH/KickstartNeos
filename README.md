@@ -1,3 +1,17 @@
+# WORKSHOP README
+
+* Go to the *workshop* branch of the repository; and do a `git pull`
+* reset your docker-compose environment using:
+  ```
+  docker-compose down -v
+  ```
+* start again using
+  ```
+  docker-compose build
+  docker-compose up -d
+  ```
+
+
 # KickstartNeos
 
 
