@@ -1,3 +1,10 @@
-prototype(Queo.SitePackage:Content.Alert) < prototype(Neos.Fusion:Value) {
-    value = "Hallo Welt 2"
+// Inheriting from ContentComponent means:
+// - we get a node we can click on in the backend
+// - the node has all necessary meta data for the Backend to work
+prototype(Queo.SitePackage:Content.Alert) < prototype(Neos.Neos:ContentComponent) {
+
+    // renderer specifies the markup of the component
+    renderer = afx`
+        <h1>Hallo Welt</h1>
+    `
 }

@@ -3,7 +3,10 @@
 'Queo.SitePackage:Mixin.BaseConventions':
   abstract: true
 
-  # Disable fusion prototype generator
+  # Disable fusion prototype generator, as this is a legacy feature which generates Fusion prototypes for Fluid Templates
+  # automatically. We do not recommend Fluid anymore; so this feature is not recommended to use anymore :)
+  #
+  # see https://neos.readthedocs.io/en/stable/CreatingASite/NodeTypes/NodeTypeDefinition.html
   options:
     fusion:
       prototypeGenerator: null
