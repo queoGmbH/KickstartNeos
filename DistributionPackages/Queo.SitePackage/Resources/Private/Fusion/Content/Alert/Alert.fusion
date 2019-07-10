@@ -11,6 +11,8 @@ prototype(Queo.SitePackage:Content.Alert) < prototype(Neos.Neos:ContentComponent
 
     // renderer specifies the markup of the component
     renderer = afx`
-        <div class={"alert alert-" + props.style} role="alert">Hallo</div>
+        <div class={"alert alert-" + props.style} role="alert">
+            <Neos.Neos:Editable property="message" />
+        </div>
     `
 }
