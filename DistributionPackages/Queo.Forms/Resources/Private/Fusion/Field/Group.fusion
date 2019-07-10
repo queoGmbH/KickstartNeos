@@ -1,8 +1,9 @@
 prototype(Queo.Forms:Field.Group) < prototype(Neos.Fusion:Component) {
+    // API von aussen
     childFields = null
-    childFields.@process.toJson = ${Json.stringify(value)}
 
+    // Internal implementation
     renderer = afx`
-        {props.childFields}
+        <Queo.Forms:FieldListRenderer fieldList={props.childFields} />
     `
 }

@@ -1,0 +1,18 @@
+prototype(Queo.Forms:FieldListRenderer) < prototype(Neos.Fusion:Loop) {
+    // Public API
+    fieldList = ${[]}
+
+    // INTERNAL implementation
+    items = ${this.fieldList}
+    itemName = "field"
+
+    # wir benötigen Möglichkeit, einen Prototypen "dynamisch" zu instanziieren -> Neos.Fusion:Renderer
+    # OPTION: Neos.Fusion:CanRender fürs Error Handling
+    itemRenderer = Neos.Fusion:Renderer {
+        type = ${'Queo.Forms:Field.' + String.firstLetterToUpperCase(field.type)}
+
+        element.attributes = ${field.attributes}
+        element.childFields = ${field.child_fields}
+        element.choices = ${field.choices}
+    }
+}

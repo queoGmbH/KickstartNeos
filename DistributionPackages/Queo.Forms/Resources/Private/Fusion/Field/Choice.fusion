@@ -1,0 +1,8 @@
+prototype(Queo.Forms:Field.Choice) < prototype(Neos.Fusion:Component) {
+    // API von aussen
+
+    // Internal implementation
+    renderer = afx`
+        CHOICE <br />
+    `
+}
