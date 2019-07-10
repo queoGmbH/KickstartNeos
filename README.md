@@ -12,6 +12,24 @@
   ```
 
 
+* VS Code Plugin: Docker WS
+* PHPStorm Plugin: "Neos" installieren, und IM PROJEKT in den Einstellungen vom Neos-Plugin den Haken bei "aktiv" setzen
+
+
+## AGENDA
+
+* Erstellen eines "einfachen" Node Types, bspw. basierend auf Bootstrap
+    * (optional): Übung 
+* Erstellen eines Node Types mit verschachtelten Inhalten
+    * (optional): Übung
+* Fusion best practices (AFX)
+
+* weitere cases.
+
+* APIs einbetten
+
+
+
 # KickstartNeos
 
 
