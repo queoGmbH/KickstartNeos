@@ -24,6 +24,9 @@
     * (optional): Übung 
 * Erstellen eines Node Types mit verschachtelten Inhalten
     * (optional): Übung
+    * https://neos.readthedocs.io/en/stable/CreatingASite/RenderingCustomMarkup/CustomContentElements.html#creating-nested-content-elements
+    * als Node Type: Neos.Neos:ContentCollection
+    * zum Rendering in Fusion: Neos.Neos:ContentCollection
 * Fusion best practices (AFX)
 
 * weitere cases.
