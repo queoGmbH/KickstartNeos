@@ -15,6 +15,8 @@
 * VS Code Plugin: Docker WS
 * PHPStorm Plugin: "Neos" installieren, und IM PROJEKT in den Einstellungen vom Neos-Plugin den Haken bei "aktiv" setzen
 
+* Node Type Definition Referenz: https://neos.readthedocs.io/en/stable/CreatingASite/NodeTypes/NodeTypeDefinition.html
+
 
 ## AGENDA
 

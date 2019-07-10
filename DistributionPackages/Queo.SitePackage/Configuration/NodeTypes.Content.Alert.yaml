@@ -5,13 +5,16 @@
     label: 'Alertbox'
     position: 10
     icon: 'fas fa-radiation'
+    inspector:
+      groups:
+        alertOptions:
+          label: 'Alert'
+          icon: 'fas fa-radiation'
 
   properties:
     style:
       type: string
-
-    text:
-      type: string
-      defaultValue: 'Überschrift'
       ui:
-        inlineEditable: true
+        label: 'Stil'
+        inspector:
+          group: 'alertOptions'
