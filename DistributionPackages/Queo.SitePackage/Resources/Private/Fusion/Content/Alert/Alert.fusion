@@ -3,8 +3,14 @@
 // - the node has all necessary meta data for the Backend to work
 prototype(Queo.SitePackage:Content.Alert) < prototype(Neos.Neos:ContentComponent) {
 
+    // this is an "Eel Expression" (Eel == Embedded Expression Language)
+    // q(node).property('...') is like in jQuery $(node).property('...')
+    //
+    // "node" is a so-called "context variable", which ALWAYS points to the CURRENTLY RENDERED NODE.
+    style = ${q(node).property('style')}
+
     // renderer specifies the markup of the component
     renderer = afx`
-        <h1>Hallo Welt</h1>
+        <div class={"alert alert-" + props.style} role="alert">Hallo</div>
     `
 }
