@@ -3,6 +3,11 @@ Neos:
     defaultContext:
       'Queo.Forms': 'Queo\Forms\Eel\FormHelper'
 
+  Neos:
+    fusion:
+      autoInclude:
+        Queo.Forms: true
+
 Queo:
   Forms:
     baseUrl: 'https://your-url-to-forms-endpoint/api/v1'

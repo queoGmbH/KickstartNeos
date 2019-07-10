@@ -29,7 +29,10 @@ class FormHelper implements ProtectedContextAwareInterface
         ]);
 
 
-        return "HALLO ICH WURDE AUFGERUFEN" . $response->getBody()->getContents();
+        $parsedResponse = json_decode($response->getBody()->getContents(), true);
+
+        // TODO caching
+        return $parsedResponse['data'];
     }
 
     /**
