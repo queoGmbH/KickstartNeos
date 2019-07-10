@@ -11,6 +11,10 @@
   childNodes:
     collection:
       type: Neos.Neos:ContentCollection
+      constraints:
+        nodeTypes:
+          '*': false
+          'Queo.SitePackage:Content.CarouselItem': true
 
 'Queo.SitePackage:Content.CarouselItem':
   superTypes:
