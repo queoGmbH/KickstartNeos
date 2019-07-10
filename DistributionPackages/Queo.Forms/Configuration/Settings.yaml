@@ -1,0 +1,4 @@
+Neos:
+  Fusion:
+    defaultContext:
+      'Queo.Forms': 'Queo\Forms\Eel\FormHelper'

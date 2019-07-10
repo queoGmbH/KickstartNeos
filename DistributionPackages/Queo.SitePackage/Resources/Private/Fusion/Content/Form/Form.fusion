@@ -5,6 +5,6 @@ prototype(Queo.SitePackage:Content.Form) < prototype(Neos.Neos:ContentComponent)
     formDefinition = ${Queo.Forms.fetchForm(this.formId)}
 
     renderer = afx`
-        Mein Formular {props.formId}
+        Mein Formular {props.formId} {props.formDefinition}
     `
 }
