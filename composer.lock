@@ -4232,7 +4232,8 @@
             "dist": {
                 "type": "path",
                 "url": "DistributionPackages/Queo.Forms",
-                "reference": "61fa265b71334b7ba247f0500be6f50d602bd245"
+                "reference": "61fa265b71334b7ba247f0500be6f50d602bd245",
+                "shasum": null
             },
             "require": {
                 "guzzlehttp/guzzle": "^6.3.3",
@@ -4256,7 +4257,8 @@
             "dist": {
                 "type": "path",
                 "url": "DistributionPackages/Queo.SitePackage",
-                "reference": "9072ee08261c70159d84a3a27746f9307478574f"
+                "reference": "9072ee08261c70159d84a3a27746f9307478574f",
+                "shasum": null
             },
             "require": {
                 "carbon/includeassets": "^3.5",
