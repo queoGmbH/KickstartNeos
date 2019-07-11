@@ -15,6 +15,7 @@ prototype(Queo.Forms:Form) < prototype(Neos.Fusion:Component) {
     }
 
     @context.submittedArguments = ${request.arguments.submittedArguments}
+    @context.submittedArgumentsValidation = ${request.arguments.submittedArgumentsValidation}
 
     uniqueHash = ${Queo.Forms.fetchUniqueHash()}
     uniqueHash.@if.onlyInFrontend = ${!node.context.inBackend}
