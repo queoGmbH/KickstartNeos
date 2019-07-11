@@ -5,7 +5,8 @@ prototype(Queo.Forms:Field.Text) < prototype(Neos.Fusion:Component) {
     submittedArgument = ''
 
     // Internal implementation
+//     <Neos.Fusion:Debug validation={props.submittedArgument}/>
     renderer = afx`
-        <input type="text" value={submittedArgument} name={"params[" + props.name + "]"}/>
+        <input type="text" value={props.submittedArgument} name={"params[" + props.name + "]"}/>
     `
 }

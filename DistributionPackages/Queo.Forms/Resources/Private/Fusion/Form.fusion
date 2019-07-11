@@ -14,9 +14,7 @@ prototype(Queo.Forms:Form) < prototype(Neos.Fusion:Component) {
         action = 'submit'
     }
 
-//    debug = Neos.Fusion:Debug {
-//        validation = ${request}
-//    }
+    @context.submittedArguments = ${request.arguments.submittedArguments}
 
     uniqueHash = ${Queo.Forms.fetchUniqueHash()}
 
@@ -29,9 +27,7 @@ prototype(Queo.Forms:Form) < prototype(Neos.Fusion:Component) {
             <input type="hidden" name="campaign" value={props.campaignId} />
             <input type="hidden" name="form" value={props.formId} />
             <Queo.Forms:FieldListRenderer
-                fieldList={props.formDefinition.form_fields}
-                submittedArguments="{request.arguments.submittedArguments}"
-                submittedArgumentsValidation="{request.arguments.submittedArgumentsValidation}" />
+                fieldList={props.formDefinition.form_fields} />
             <button type="submit">{props.formDefinition.form.submit_text}</button>
         </form>
     `
