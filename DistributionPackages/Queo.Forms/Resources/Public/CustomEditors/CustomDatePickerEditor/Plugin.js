@@ -1049,8 +1049,6 @@ var _CustomDatePickerEditor2 = _interopRequireDefault(_CustomDatePickerEditor);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.log('load new datepicker');
-
 (0, _neosUiExtensibility2.default)('Queo.Forms.CustomEditors:CustomDatePickerEditor', {}, function (globalRegistry) {
     var editorsRegistry = globalRegistry.get('inspector').get('editors');
 
