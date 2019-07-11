@@ -20,9 +20,17 @@ class FormHelper implements ProtectedContextAwareInterface
         $this->formService = $formService;
     }
 
-    public function fetchForm($formId)
+    public function fetchForm(int $formId): array
     {
-        return $this->formService->fetchForm($formId);
+        $formData =  $this->formService->fetchForm($formId);
+
+        //todo validate structure
+        return $formData['data']['form'];
+    }
+
+    public function fetchUniqueHash(): string
+    {
+        return $this->formService->fetchUniqueHash();
     }
 
     /**

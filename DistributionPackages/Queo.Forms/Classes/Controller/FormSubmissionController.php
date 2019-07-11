@@ -41,6 +41,6 @@ class FormSubmissionController extends ActionController
             );
         }
 
-        return $response['completion_message'];
+        return $response['data']['completion_message'];
     }
 }
