@@ -24,7 +24,6 @@ prototype(Queo.Forms:Form) < prototype(Neos.Fusion:Component) {
         <form method="post" action={props.formAction}>
             <input type="hidden" name="unique_hash" value={props.uniqueHash} />
             <input type="hidden" name="refererNode" value={props.refererNode} />
-            <input type="hidden" name="unique_hash" value={props.formDefinition.form.unique_hash} />
             <input type="hidden" name="client" value={props.clientId} />
             <input type="hidden" name="campaign" value={props.campaignId} />
             <input type="hidden" name="form" value={props.formId} />
@@ -32,7 +31,7 @@ prototype(Queo.Forms:Form) < prototype(Neos.Fusion:Component) {
                 fieldList={props.formDefinition.form_fields}
                 submittedArguments="{request.arguments.submittedArguments}"
                 submittedArgumentsValidation="{request.arguments.submittedArgumentsValidation}" />
-            <button type="submit">{props.formDefinition.form.submit_text}</button>
+            <button type="submit">{props.formDefinition.submit_text}</button>
         </form>
     `
 }
