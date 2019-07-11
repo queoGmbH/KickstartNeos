@@ -33,11 +33,15 @@ class FormService
 
     public function fetchForm(int $formId): array
     {
-        $response = $this->client->request('GET', $this->baseUrl . '/forms/' . $formId . '.json', [
-            'headers' => $this->requestHeaders
-        ]);
+        return $this->authorisedRequest('GET', '/forms/' . $formId . '.json');
+    }
 
-        return $this->getParsedResponse($response);
+    public function fetchUniqueHash(): string
+    {
+        $response = $this->authorisedRequest('GET', '/unique_hash/generate.json');
+
+        //todo check response
+        return $response['data']['unique_hash']['hash'];
     }
 
     public function postForm(int $client, int $campaign, int $form, string $uniqueHash, array $params): array
@@ -51,20 +55,26 @@ class FormService
                 'params' => json_encode($params),
                 'ip' => '127.0.0.1',
                 'confirm_url' => 'example.com'
-            ],
-            'headers' => $this->requestHeaders
+            ]
         ];
 
-        $response = $this->client->request('POST', $this->baseUrl . '/entries.json', $options);
-
-        return $this->getParsedResponse($response);
+        return $this->authorisedRequest('POST', '/entries.json', $options);
     }
 
-    public function getParsedResponse(ResponseInterface $response): array
+    private function getParsedResponse(ResponseInterface $response): array
     {
         $parsedResponse = json_decode($response->getBody()->getContents(), true);
 
         // TODO caching
         return $parsedResponse;
+    }
+
+    private function authorisedRequest(string $method, string $route, array $options = []): array
+    {
+        $options['headers'] = $this->requestHeaders;
+
+        $response =  $this->client->request($method, $this->baseUrl . $route, $options);
+
+        return $this->getParsedResponse($response);
     }
 }

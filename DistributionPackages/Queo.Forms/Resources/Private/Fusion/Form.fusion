@@ -13,9 +13,11 @@ prototype(Queo.Forms:Form) < prototype(Neos.Fusion:Component) {
         action = 'submit'
     }
 
+    uniqueHash = ${Queo.Forms.fetchUniqueHash()}
+
     renderer = afx`
         <form method="post" action={props.formAction}>
-            <input type="hidden" name="unique_hash" value={props.formDefinition.unique_hash} />
+            <input type="hidden" name="unique_hash" value={props.uniqueHash} />
             <input type="hidden" name="client" value={props.clientId} />
             <input type="hidden" name="campaign" value={props.campaignId} />
             <input type="hidden" name="form" value={props.formId} />
