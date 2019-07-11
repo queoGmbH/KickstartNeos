@@ -2,7 +2,7 @@ prototype(Queo.Forms:Field.Text) < prototype(Neos.Fusion:Component) {
     // API von aussen
     name = ''
     submittedArgument = ''
-    submittedArgumentValidation = ${[]}
+    validationMessages = ${[]}
 
     //optional
     //requrire
@@ -10,6 +10,7 @@ prototype(Queo.Forms:Field.Text) < prototype(Neos.Fusion:Component) {
     name = ''
     type = ''
     isDisabled = false
+    class = ${!this.validationMessages || Array.isEmpty(this.validationMessages) ? '' : 'is-invalid'}
 
     // labelText.@if.isTrue = true
     // @if.meineCondition = true
@@ -19,7 +20,12 @@ prototype(Queo.Forms:Field.Text) < prototype(Neos.Fusion:Component) {
     renderer = afx`
         <div class="form-group">
             <label>{props.labelText}
-                <input name={"params[" + props.name + "]"} class="form-control" type={props.type} value={props.submittedArgument} disabled={props.isDiabled} disabled.@if.isDisabled={props.isDisabled}/>
+                <input name={"params[" + props.name + "]"} class={"form-control " + props.class} type={props.type} value={props.submittedArgument} disabled={props.isDiabled} disabled.@if.isDisabled={props.isDisabled}/>
+                <Neos.Fusion:Loop items={props.validationMessages} itemName="validationMessage">
+                    <div class="invalid-feedback">
+                        {validationMessage}
+                    </div>
+                </Neos.Fusion:Loop>
             </label>
         </div>
     `

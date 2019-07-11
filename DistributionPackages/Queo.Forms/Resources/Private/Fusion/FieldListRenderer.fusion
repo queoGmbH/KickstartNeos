@@ -32,6 +32,6 @@ prototype(Queo.Forms:FieldListRenderer) < prototype(Neos.Fusion:Loop) {
         element.infoText.@if.infoTextIsDefined = ${field.info_text}
         element.validation = ${submittedArgumentsValidation[field.name]}
         element.submittedArgument = ${submittedArguments[field.name]}
-        element.submittedArgumentValidation = ${submittedArgumentsValidation[field.name]}
+        element.validationMessages = ${submitResponse.validation.children[field.name]['errors']}
     }
 }

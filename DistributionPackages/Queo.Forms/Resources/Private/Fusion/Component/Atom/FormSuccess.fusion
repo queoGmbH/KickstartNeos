@@ -1,0 +1,9 @@
+prototype(Queo.Forms:Component.Atom.FormSuccess) < prototype(Neos.Fusion:Component) {
+    message = ''
+
+    renderer = afx`
+        <div class="alert alert-success" role="alert">
+            {props.message}
+        </div>
+    `
+}

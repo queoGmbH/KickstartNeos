@@ -6,32 +6,26 @@ prototype(Queo.Forms:Form) < prototype(Neos.Fusion:Component) {
     clientId    = null
     refererNode = null
 
-    // internal
-    formDefinition = ${Queo.Forms.fetchForm(this.formId)}
-    formAction = Neos.Fusion:UriBuilder {
-        package = 'Queo.Forms'
-        controller = 'FormSubmission'
-        action = 'submit'
-    }
-
     @context.submittedArguments = ${request.arguments.submittedArguments}
-    @context.submittedArgumentsValidation = ${request.arguments.submittedArgumentsValidation}
+    @context.submitResponse = ${request.arguments.submitResponse}
 
-    uniqueHash = ${Queo.Forms.fetchUniqueHash()}
-    uniqueHash.@if.onlyInFrontend = ${!node.context.inBackend}
+    state = ${request.arguments.state}
 
-    renderer = afx`
-        <form method="post" action={props.formAction}>
-            <input type="hidden" name="uniqueHash" value={props.uniqueHash} />
-            <input type="hidden" name="refererNode" value={props.refererNode} />
-            <input type="hidden" name="client" value={props.clientId} />
-            <input type="hidden" name="campaign" value={props.campaignId} />
-            <input type="hidden" name="form" value={props.formId} />
-            <Queo.Forms:FieldListRenderer
-                fieldList={props.formDefinition.form_fields} />
-            <button class="btn btn-primary" type="submit">{props.formDefinition.submit_text}</button>
-        </form>
-    `
+    renderer = Neos.Fusion:Case {
+        success {
+            condition = ${props.state == 'success'}
+            type = 'Queo.Forms:Component.Atom.FormSuccess'
+            element.message = ${submitResponse.completion_message}
+        }
+        default {
+            condition = TRUE
+            type = 'Queo.Forms:Component.Atom.Form'
+            element.formId = ${props.formId}
+            element.campaignId = ${props.campaignId}
+            element.clientId = ${props.clientId}
+            element.refererNode = ${props.refererNode}
+        }
+    }
 
     @cache {
         mode = 'uncached'
