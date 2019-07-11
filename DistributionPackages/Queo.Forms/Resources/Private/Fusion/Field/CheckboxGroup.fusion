@@ -1,10 +1,7 @@
-prototype(Queo.Forms:Field.Radio) < prototype(Neos.Fusion:Component) {
+prototype(Queo.Forms:Field.CheckboxGroup) < prototype(Neos.Fusion:Component) {
     // API von aussen
-
     labelText = ''
-    name = ''
-    type = 'radio'
-    choices = ${[]}
+    type = 'checkbox'
 
     // Internal implementation
     renderer = afx`
@@ -12,7 +9,7 @@ prototype(Queo.Forms:Field.Radio) < prototype(Neos.Fusion:Component) {
             <label>{props.labelText}</label>
             <Neos.Fusion:Loop items={props.choices} itemName="choice">
                 <div class="form-check">
-                    <input class="form-check-input" type={props.type} name={props.name} value={choice} />
+                    <input class="form-check-input" type="checkbox" name={props.name + "[]"} value={choice} />
                     <label class="form-check-label">{choice}</label>
                </div>
             </Neos.Fusion:Loop>

@@ -1,8 +1,18 @@
 prototype(Queo.Forms:Field.Choice) < prototype(Neos.Fusion:Component) {
     // API von aussen
 
+    labelText = ''
+    choices = ${[]}
+
     // Internal implementation
     renderer = afx`
-        CHOICE <br />
+        <div class="form-group">
+            <label>{props.labelText}</label>
+            <select class="form-control">
+                <Neos.Fusion:Loop items={props.choices} itemName="choice">
+                     <option>{choice}</option>
+                </Neos.Fusion:Loop>
+            </select>
+        </div>
     `
 }

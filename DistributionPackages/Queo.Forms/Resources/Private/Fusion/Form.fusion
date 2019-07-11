@@ -28,7 +28,7 @@ prototype(Queo.Forms:Form) < prototype(Neos.Fusion:Component) {
             <input type="hidden" name="form" value={props.formId} />
             <Queo.Forms:FieldListRenderer
                 fieldList={props.formDefinition.form_fields} />
-            <button type="submit">{props.formDefinition.submit_text}</button>
+            <button class="btn btn-primary" type="submit">{props.formDefinition.submit_text}</button>
         </form>
     `
 

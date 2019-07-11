@@ -1,8 +1,13 @@
 prototype(Queo.Forms:Field.Checkbox) < prototype(Neos.Fusion:Component) {
     // API von aussen
+    labelText = ''
+    type = 'checkbox'
 
     // Internal implementation
     renderer = afx`
-        Checkbox <br />
+        <div class="form-group form-check">
+            <input type={props.type} class="form-check-input" id="exampleCheck1" />
+            <label class="form-check-label" for="exampleCheck1">{props.labelText}</label>
+         </div>
     `
 }

@@ -1,8 +1,17 @@
 prototype(Queo.Forms:Field.Date) < prototype(Neos.Fusion:Component) {
     // API von aussen
 
+    labelText = ''
+    name = ''
+    type = ''
+    isDisabled = false
+
     // Internal implementation
     renderer = afx`
-        DATE <br />
+       <div class="form-group">
+            <label>{props.labelText}
+                <input name={"params[" + props.name + "]"} class="form-control" type={props.type} value="" disabled={props.isDiabled} disabled.@if.isDisabled={props.isDisabled}/>
+            </label>
+        </div>
     `
 }

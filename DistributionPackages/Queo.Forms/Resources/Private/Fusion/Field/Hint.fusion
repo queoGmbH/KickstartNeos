@@ -1,8 +1,9 @@
 prototype(Queo.Forms:Field.Hint) < prototype(Neos.Fusion:Component) {
     // API von aussen
+    infoText = ''
 
     // Internal implementation
     renderer = afx`
-        HINT <br />
+        {props.infoText}
     `
 }

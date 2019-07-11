@@ -4,9 +4,23 @@ prototype(Queo.Forms:Field.Text) < prototype(Neos.Fusion:Component) {
     validation = ${[]}
     submittedArgument = ''
 
+    //optional
+    //requrire
+    labelText = ''
+    name = ''
+    type = ''
+    isDisabled = false
+
+    // labelText.@if.isTrue = true
+    // @if.meineCondition = true
+
     // Internal implementation
 //     <Neos.Fusion:Debug validation={props.submittedArgument}/>
     renderer = afx`
-        <input type="text" value={props.submittedArgument} name={"params[" + props.name + "]"}/>
+        <div class="form-group">
+            <label>{props.labelText}
+                <input name={"params[" + props.name + "]"} class="form-control" type={props.type} value={props.submittedArgument} disabled={props.isDiabled} disabled.@if.isDisabled={props.isDisabled}/>
+            </label>
+        </div>
     `
 }
