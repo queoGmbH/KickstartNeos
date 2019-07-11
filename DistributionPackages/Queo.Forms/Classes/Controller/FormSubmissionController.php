@@ -18,13 +18,13 @@ class FormSubmissionController extends ActionController
         $this->formService = $formService;
     }
 
-    public function submitAction()
+    public function submitAction(int $client, int $campaign, int $form, array $params, string $uniqueHash)
     {
-        $client = (int)$this->request->getArgument('client');
-        $campaign = (int)$this->request->getArgument('campaign');
-        $form = (int)$this->request->getArgument('form');
-        $params = $this->request->getArgument('params');
-        $uniqueHash = $this->request->getArgument('unique_hash');
+//        $client = (int)$this->request->getArgument('client');
+//        $campaign = (int)$this->request->getArgument('campaign');
+//        $form = (int)$this->request->getArgument('form');
+//        $params = $this->request->getArgument('params');
+//        $uniqueHash = $this->request->getArgument('unique_hash');
 
         $response = $this->formService->postForm($client, $campaign, $form, $uniqueHash, $params);
 
