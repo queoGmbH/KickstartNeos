@@ -15,7 +15,19 @@
         label: 'Formular-ID (bspw. 2)'
         inspector:
           group: default
-        help:
-          message: |
-            Hallo
-            Welt
+
+    campaignId:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Campaign-ID (bspw. 2)'
+        inspector:
+          group: default
+
+    clientId:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Client-ID (bspw. 2)'
+        inspector:
+          group: default

@@ -2,5 +2,8 @@ prototype(Queo.SitePackage:Content.Form) < prototype(Neos.Neos:ContentComponent)
 
     renderer = Queo.Forms:Form {
         formId = ${q(node).property('formId')}
+        clientId = ${q(node).property('clientId')}
+        campaignId = ${q(node).property('campaignId')}
+        refererNode = ${q(documentNode).property('_contextPath')}
     }
 }

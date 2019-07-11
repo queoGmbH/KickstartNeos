@@ -20,13 +20,26 @@ class FormSubmissionController extends ActionController
 
     public function submitAction()
     {
-        $client = $this->request->getArgument('client');
-        $campaign = $this->request->getArgument('campaign');
-        $form = $this->request->getArgument('form');
+        $client = (int)$this->request->getArgument('client');
+        $campaign = (int)$this->request->getArgument('campaign');
+        $form = (int)$this->request->getArgument('form');
         $params = $this->request->getArgument('params');
         $uniqueHash = $this->request->getArgument('unique_hash');
 
         $response = $this->formService->postForm($client, $campaign, $form, $uniqueHash, $params);
+
+        if ($response['status'] !== 'success') {
+            $this->forward(
+                'show',
+                'Frontend\Node',
+                'Neos.Neos',
+                [
+                    'node' => $this->request->getArgument('refererNode'),
+                    'submittedArguments' => $params,
+                    'submittedArgumentsValidation' => $response['data']['validation']['children'],
+                ]
+            );
+        }
 
         return $response['completion_message'];
     }

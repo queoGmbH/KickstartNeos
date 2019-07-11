@@ -1,9 +1,11 @@
 prototype(Queo.Forms:Field.Text) < prototype(Neos.Fusion:Component) {
     // API von aussen
     name = ''
+    validation = ${[]}
+    submittedArgument = ''
 
     // Internal implementation
     renderer = afx`
-        <input type="text" name={"params[" + props.name + "]"}/>
+        <input type="text" value={submittedArgument} name={"params[" + props.name + "]"}/>
     `
 }

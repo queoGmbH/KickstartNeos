@@ -53,7 +53,8 @@ class FormService
                 'ip' => '127.0.0.1',
                 'confirm_url' => 'example.com'
             ],
-            'headers' => $this->requestHeaders
+            'headers' => $this->requestHeaders,
+            'http_errors' => false,
         ];
 
         $response = $this->client->request('POST', $this->baseUrl . '/entries.json', $options);

@@ -1,6 +1,8 @@
 prototype(Queo.Forms:FieldListRenderer) < prototype(Neos.Fusion:Loop) {
     // Public API
     fieldList = ${[]}
+    submittedArguments = ${[]}
+    submittedArgumentsValidation = ${[]}
 
     // INTERNAL implementation
     items = ${this.fieldList}
@@ -15,5 +17,7 @@ prototype(Queo.Forms:FieldListRenderer) < prototype(Neos.Fusion:Loop) {
         element.childFields = ${field.child_fields}
         element.choices = ${field.choices}
         element.name = ${field.name}
+        element.validation = ${submittedArgumentsValidation[field.name]}
+        element.submittedArgument = ${submittedArguments[field.name]}
     }
 }
