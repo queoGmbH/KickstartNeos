@@ -19,6 +19,7 @@ prototype(Queo.Forms:Form) < prototype(Neos.Fusion:Component) {
 //    }
 
     uniqueHash = ${Queo.Forms.fetchUniqueHash()}
+    uniqueHash.@if.onlyInFrontend = ${!node.context.inBackend}
 
     renderer = afx`
         <form method="post" action={props.formAction}>
