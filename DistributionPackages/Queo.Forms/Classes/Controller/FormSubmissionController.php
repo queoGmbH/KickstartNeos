@@ -28,6 +28,6 @@ class FormSubmissionController extends ActionController
 
         $response = $this->formService->postForm($client, $campaign, $form, $uniqueHash, $params);
 
-        return $response['completion_message'];
+        return $response['data']['completion_message'];
     }
 }

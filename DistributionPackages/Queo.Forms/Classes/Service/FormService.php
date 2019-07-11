@@ -37,7 +37,6 @@ class FormService
             'headers' => $this->requestHeaders
         ]);
 
-
         return $this->getParsedResponse($response);
     }
 
@@ -66,6 +65,6 @@ class FormService
         $parsedResponse = json_decode($response->getBody()->getContents(), true);
 
         // TODO caching
-        return $parsedResponse['data'];
+        return $parsedResponse;
     }
 }

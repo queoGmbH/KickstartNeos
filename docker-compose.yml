@@ -2,7 +2,7 @@
 #
 # For instructions how to use docker-compose, see
 # https://docs.neos.io/cms/installation-development-setup/docker-and-docker-compose-setup#docker-compose-cheat-sheet
-version: '3.5'
+version: '3.3'
 services:
   # Neos CMS
   neos:
@@ -18,6 +18,7 @@ services:
       - ./DistributionPackages/:/app/DistributionPackages/:cached
       # if you work on other packages, you need to add them here.
       - ./Packages/Sites/:/app/Packages/Sites/:cached
+      - ./Data/Logs/:/app/Data/Logs/:cached
     ports:
       - 8081:8081
   # DB
