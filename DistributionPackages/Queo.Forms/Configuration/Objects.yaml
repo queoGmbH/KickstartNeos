@@ -1,0 +1,5 @@
+Queo\Forms\Service\FormService:
+  scope: singleton
+
+GuzzleHttp\Client:
+  scope: singleton

@@ -14,5 +14,6 @@ prototype(Queo.Forms:FieldListRenderer) < prototype(Neos.Fusion:Loop) {
         element.attributes = ${field.attributes}
         element.childFields = ${field.child_fields}
         element.choices = ${field.choices}
+        element.name = ${field.name}
     }
 }

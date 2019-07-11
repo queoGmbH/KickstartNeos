@@ -1,8 +1,9 @@
 prototype(Queo.Forms:Field.Text) < prototype(Neos.Fusion:Component) {
     // API von aussen
+    name = ''
 
     // Internal implementation
     renderer = afx`
-        TEXT <br />
+        <input type="text" name={"params[" + props.name + "]"}/>
     `
 }

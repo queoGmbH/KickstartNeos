@@ -1,38 +1,28 @@
 <?php
 
-
 namespace Queo\Forms\Eel;
 
-use Neos\Flow\Annotations as Flow;
 use Neos\Eel\ProtectedContextAwareInterface;
+use Queo\Forms\Service\FormService;
+
 
 class FormHelper implements ProtectedContextAwareInterface
 {
-
     /**
-     * @Flow\InjectConfiguration("baseUrl")
-     * @var string
+     * @var FormService
      */
-    protected $baseUrl;
+    private $formService;
 
-    /**
-     * @Flow\InjectConfiguration("requestHeaders")
-     * @var array
-     */
-    protected $requestHeaders;
+    public function __construct(
+        FormService $formService
+    )
+    {
+        $this->formService = $formService;
+    }
 
     public function fetchForm($formId)
     {
-        $client = new \GuzzleHttp\Client();
-        $response = $client->request('GET',  $this->baseUrl . '/forms/' . $formId . '.json', [
-            'headers' => $this->requestHeaders
-        ]);
-
-
-        $parsedResponse = json_decode($response->getBody()->getContents(), true);
-
-        // TODO caching
-        return $parsedResponse['data'];
+        return $this->formService->fetchForm($formId);
     }
 
     /**
