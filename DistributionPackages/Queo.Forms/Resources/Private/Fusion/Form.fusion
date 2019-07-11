@@ -32,4 +32,12 @@ prototype(Queo.Forms:Form) < prototype(Neos.Fusion:Component) {
             <button type="submit">{props.formDefinition.submit_text}</button>
         </form>
     `
+
+    @cache {
+        mode = 'uncached'
+        context {
+            1 = 'node'
+            2 = 'documentNode'
+        }
+    }
 }
