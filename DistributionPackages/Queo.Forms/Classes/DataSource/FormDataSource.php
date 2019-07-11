@@ -23,6 +23,6 @@ class FormDataSource extends AbstractDataSource
      */
     public function getData(NodeInterface $node = null, array $arguments)
     {
-        // TODO: Implement getData() method.
+
     }
 }

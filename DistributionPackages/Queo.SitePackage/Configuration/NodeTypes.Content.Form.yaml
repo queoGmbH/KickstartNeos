@@ -17,11 +17,23 @@
           group: default
           editor: 'Content/Inspector/Editors/SelectBoxEditor'
           editorOptions:
+            allowEmpty: true
             placeholder: 'Bitte auswählen'
             dataSourceIdentifier: 'queo-forms-client'
     campaignId:
       type: string
       defaultValue: ''
+      ui:
+        label: 'Kampagne'
+        inspector:
+          group: default
+          editor: 'Content/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: true
+            placeholder: 'Bitte auswählen'
+            dataSourceIdentifier: 'queo-forms-campaign'
+            dataSourceAdditionalData:
+              clientId: 'ClientEval:node.properties.clientId'
     formId:
       type: string
       defaultValue: ''
