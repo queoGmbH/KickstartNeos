@@ -4,6 +4,7 @@
 namespace Queo\Forms\Service;
 
 use GuzzleHttp\Client;
+use Neos\Cache\Frontend\VariableFrontend;
 use Neos\Flow\Annotations as Flow;
 use Psr\Http\Message\ResponseInterface;
 
@@ -26,14 +27,28 @@ class FormService
      */
     protected $requestHeaders;
 
-    public function __construct(Client $client)
+    /** @var VariableFrontend */
+    protected $cache;
+
+    public function __construct(
+        Client $client
+    )
     {
         $this->client = $client;
     }
 
     public function fetchForm(int $formId): array
     {
-        return $this->authorisedRequest('GET', '/forms/' . $formId . '.json');
+        $key = $formId;
+
+        if($this->cache->has($key)) {
+            $response = $this->cache->get($key);
+        } else {
+            $response = $this->authorisedRequest('GET', '/forms/' . $formId . '.json');
+            $this->cache->set($key, $response);
+        }
+
+        return $response;
     }
 
     public function fetchUniqueHash(): string

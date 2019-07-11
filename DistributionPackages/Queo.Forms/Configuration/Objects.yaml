@@ -1,5 +1,13 @@
 Queo\Forms\Service\FormService:
   scope: singleton
+  properties:
+    cache:
+      object:
+        factoryObjectName: Neos\Flow\Cache\CacheManager
+        factoryMethodName: getCache
+        arguments:
+          1:
+            value: QueoForm_FormCache
 
 GuzzleHttp\Client:
   scope: singleton
