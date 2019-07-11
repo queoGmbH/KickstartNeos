@@ -23,8 +23,6 @@ class FormHelper implements ProtectedContextAwareInterface
 
     public function fetchForm($formId)
     {
-        return [];
-
         $client = new \GuzzleHttp\Client();
         $response = $client->request('GET',  $this->baseUrl . '/forms/' . $formId . '.json', [
             'headers' => $this->requestHeaders

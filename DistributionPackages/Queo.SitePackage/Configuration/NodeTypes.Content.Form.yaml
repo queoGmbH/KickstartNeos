@@ -38,10 +38,14 @@
       type: string
       defaultValue: ''
       ui:
-        label: 'Formular-ID (bspw. 2)'
+        label: 'Formular'
         inspector:
           group: default
-        help:
-          message: |
-            Hallo
-            Welt
+          editor: 'Content/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: true
+            placeholder: 'Bitte auswählen'
+            dataSourceIdentifier: 'queo-forms-form'
+            dataSourceAdditionalData:
+              clientId: 'ClientEval:node.properties.campaignId'
+        reloadIfChanged: true

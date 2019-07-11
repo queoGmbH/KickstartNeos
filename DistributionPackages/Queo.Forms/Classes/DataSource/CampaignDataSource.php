@@ -5,21 +5,10 @@ namespace Queo\Forms\DataSource;
 use Neos\ContentRepository\Domain\Model\NodeInterface;
 use Neos\Neos\Service\DataSource\AbstractDataSource;
 use Neos\Flow\Annotations as Flow;
+use Queo\Forms\Service\FormsApiService;
 
 class CampaignDataSource extends AbstractDataSource
 {
-
-    /**
-     * @Flow\InjectConfiguration("baseUrl")
-     * @var string
-     */
-    protected $baseUrl;
-
-    /**
-     * @Flow\InjectConfiguration("requestHeaders")
-     * @var array
-     */
-    protected $requestHeaders;
 
     /**
      * @var string
@@ -39,16 +28,18 @@ class CampaignDataSource extends AbstractDataSource
     public function getData(NodeInterface $node = null, array $arguments)
     {
 
-        if (empty($arguments['clientId'])) {
+        /**
+         * TODO Workaround eigentlich müsste die UI das bereits machen
+         */
+        $clientId = empty($arguments['clientId']) ? $node->getProperty('clientId') : $arguments['clientId'];
+
+        if (empty($clientId)) {
             return [];
         }
 
-        $client = new \GuzzleHttp\Client();
-        $response = $client->request('GET',  $this->baseUrl . '/campaigns.json?filter[client]=' . $arguments['clientId'], [
-            'headers' => $this->requestHeaders
-        ]);
+        $formsApiService = new FormsApiService();
 
-        $parsedResponse = json_decode($response->getBody()->getContents(), true);
+        $parsedResponse = $formsApiService->getCampaigns($clientId);
 
         $campaigns = [];
 
