@@ -1,8 +1,25 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: michael
- * Date: 11.07.2019
- * Time: 09:17
- */
+namespace Queo\Forms\DataSource;
 
+
+use Neos\ContentRepository\Domain\Model\NodeInterface;
+use Neos\Neos\Service\DataSource\AbstractDataSource;
+
+class CampaignDataSource extends AbstractDataSource
+{
+
+    /**
+     * Get data
+     *
+     * The return value must be JSON serializable data structure.
+     *
+     * @param NodeInterface $node The node that is currently edited (optional)
+     * @param array $arguments Additional arguments (key / value)
+     * @return mixed JSON serializable data
+     * @api
+     */
+    public function getData(NodeInterface $node = null, array $arguments)
+    {
+        // TODO: Implement getData() method.
+    }
+}
