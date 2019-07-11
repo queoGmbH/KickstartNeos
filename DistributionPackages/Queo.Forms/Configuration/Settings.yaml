@@ -7,6 +7,13 @@ Neos:
     fusion:
       autoInclude:
         Queo.Forms: true
+
+    Ui:
+      resources:
+        javascript:
+          'Queo.Forms.CustomEditors:CustomDatePickerEditor':
+            resource: resource://Queo.Forms/Public/CustomEditors/CustomDatePickerEditor/Plugin.js
+
   Flow:
     mvc:
       # Defines routes that should be included after existing routes defined in the main Routes.yaml (if any)

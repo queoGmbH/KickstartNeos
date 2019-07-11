@@ -16,5 +16,6 @@ prototype(Queo.SitePackage:Content.Alert) < prototype(Neos.Neos:ContentComponent
         //
         // "node" is a so-called "context variable", which ALWAYS points to the CURRENTLY RENDERED NODE.
         style = ${q(node).property('style')}
+        date = ${q(node).property('date')}
     }
 }

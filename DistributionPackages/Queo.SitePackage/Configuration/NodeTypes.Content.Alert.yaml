@@ -9,6 +9,15 @@
     icon: 'fas fa-radiation'
 
   properties:
+    date:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Hallo Welt'
+        inspector:
+          group: 'default'
+          editor: 'Queo.Forms.CustomEditors/CustomDatePickerEditor'
+
     message:
       type: string
       defaultValue: ''

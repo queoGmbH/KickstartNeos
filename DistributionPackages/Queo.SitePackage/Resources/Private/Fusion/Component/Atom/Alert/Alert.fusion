@@ -5,6 +5,7 @@
 prototype(Queo.SitePackage:Component.Atom.Alert) < prototype(Neos.Fusion:Component) {
     content = ""
     style = ""
+    date = ""
 
     # styleguide annotation für Monocle
     @styleguide {
@@ -26,6 +27,7 @@ prototype(Queo.SitePackage:Component.Atom.Alert) < prototype(Neos.Fusion:Compone
     renderer = afx`
         <div class={"alert alert-" + props.style} role="alert">
             {props.content}
+            {props.date}
         </div>
     `
 
