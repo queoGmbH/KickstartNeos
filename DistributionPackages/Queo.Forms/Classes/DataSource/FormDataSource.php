@@ -6,6 +6,10 @@ use Neos\Neos\Service\DataSource\AbstractDataSource;
 
 class FormDataSource extends AbstractDataSource
 {
+    /**
+     * @var string
+     */
+    static protected $identifier = 'queo-forms-form';
 
     /**
      * Get data

@@ -17,6 +17,7 @@
           group: default
           editor: 'Content/Inspector/Editors/SelectBoxEditor'
           editorOptions:
+            placeholder: 'Bitte auswählen'
             dataSourceIdentifier: 'queo-forms-client'
     campaignId:
       type: string

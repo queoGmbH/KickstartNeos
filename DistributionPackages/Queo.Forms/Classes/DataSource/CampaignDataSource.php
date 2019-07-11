@@ -7,6 +7,10 @@ use Neos\Neos\Service\DataSource\AbstractDataSource;
 
 class CampaignDataSource extends AbstractDataSource
 {
+    /**
+     * @var string
+     */
+    static protected $identifier = 'queo-forms-campaign';
 
     /**
      * Get data
