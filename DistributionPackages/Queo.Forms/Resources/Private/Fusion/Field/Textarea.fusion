@@ -1,8 +1,12 @@
 prototype(Queo.Forms:Field.Textarea) < prototype(Neos.Fusion:Component) {
     // API von aussen
+    labelText = ''
 
     // Internal implementation
     renderer = afx`
-        TEXT AREA <br />
+        <div class="form-group">
+            <label>{props.labelText}</label>
+            <textarea class="form-control" rows="3"></textarea>
+        </div>
     `
 }

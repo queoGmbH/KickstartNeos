@@ -14,5 +14,12 @@ prototype(Queo.Forms:FieldListRenderer) < prototype(Neos.Fusion:Loop) {
         element.attributes = ${field.attributes}
         element.childFields = ${field.child_fields}
         element.choices = ${field.choices}
+        element.labelText = ${field.label_text}
+        element.name = ${field.name}
+        element.type = ${field.type}
+        element.isDisabled = ${field.is_disabled}
+        element.isDisabled.@if.isDisabledIsDefined = ${field.is_disabled}
+        element.infoText = ${field.info_text}
+        element.infoText.@if.infoTextIsDefined = ${field.info_text}
     }
 }

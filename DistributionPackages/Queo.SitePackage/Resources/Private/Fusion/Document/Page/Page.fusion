@@ -16,7 +16,9 @@ prototype(Queo.SitePackage:Document.Page) < prototype(Neos.Neos:Page) {
 
             renderer = afx`
                 <main class="main">
-                    {props.main}
+                    <div class="container">
+                        {props.main}
+                    </div>
                 </main>
             `
         }
