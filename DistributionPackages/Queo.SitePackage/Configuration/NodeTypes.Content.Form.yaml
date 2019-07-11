@@ -47,5 +47,5 @@
             placeholder: 'Bitte auswählen'
             dataSourceIdentifier: 'queo-forms-form'
             dataSourceAdditionalData:
-              clientId: 'ClientEval:node.properties.campaignId'
+              campaignId: 'ClientEval:node.properties.campaignId'
         reloadIfChanged: true
