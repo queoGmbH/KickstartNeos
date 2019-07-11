@@ -1,8 +1,8 @@
 prototype(Queo.Forms:Field.Text) < prototype(Neos.Fusion:Component) {
     // API von aussen
     name = ''
-    validation = ${[]}
     submittedArgument = ''
+    submittedArgumentValidation = ${[]}
 
     //optional
     //requrire
