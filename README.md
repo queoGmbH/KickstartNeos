@@ -80,3 +80,8 @@ Create a Username + Password
 Click 'Next' a few times
 
 Tadaa, your now at your local Neos back-end
+
+
+## Frontend todos / info beschaffung
+- CSS / JS Builds unabhängig von dem gulp paket
+- Custom Element Hooks in React Komponenten
