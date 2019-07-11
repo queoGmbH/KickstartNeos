@@ -1,0 +1,18 @@
+prototype(Queo.Forms:Field.CheckboxGroup) < prototype(Neos.Fusion:Component) {
+    // API von aussen
+    labelText = ''
+    type = 'checkbox'
+
+    // Internal implementation
+    renderer = afx`
+        <div class="form-group">
+            <label>{props.labelText}</label>
+            <Neos.Fusion:Loop items={props.choices} itemName="choice">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name={props.name + "[]"} value={choice} />
+                    <label class="form-check-label">{choice}</label>
+               </div>
+            </Neos.Fusion:Loop>
+        </div>
+    `
+}
