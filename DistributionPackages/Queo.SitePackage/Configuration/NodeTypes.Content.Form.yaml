@@ -8,14 +8,44 @@
     position: 10
     icon: 'fas fa-heading'
   properties:
+    clientId:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Mandant'
+        inspector:
+          group: default
+          editor: 'Content/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: true
+            placeholder: 'Bitte auswählen'
+            dataSourceIdentifier: 'queo-forms-client'
+    campaignId:
+      type: string
+      defaultValue: ''
+      ui:
+        label: 'Kampagne'
+        inspector:
+          group: default
+          editor: 'Content/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: true
+            placeholder: 'Bitte auswählen'
+            dataSourceIdentifier: 'queo-forms-campaign'
+            dataSourceAdditionalData:
+              clientId: 'ClientEval:node.properties.clientId'
     formId:
       type: string
       defaultValue: ''
       ui:
-        label: 'Formular-ID (bspw. 2)'
+        label: 'Formular'
         inspector:
           group: default
-        help:
-          message: |
-            Hallo
-            Welt
+          editor: 'Content/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: true
+            placeholder: 'Bitte auswählen'
+            dataSourceIdentifier: 'queo-forms-form'
+            dataSourceAdditionalData:
+              campaignId: 'ClientEval:node.properties.campaignId'
+        reloadIfChanged: true
