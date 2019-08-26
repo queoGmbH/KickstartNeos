@@ -1,36 +1,37 @@
 {
-  "name": "queo/site",
-  "homepage": "https://www.homepage.com",
-  "description": "Website for some customer",
-  "license": "proprietary",
-  "config": {
-    "vendor-dir": "Packages/Libraries",
-    "bin-dir": "bin"
-  },
-  "require": {
-    "neos/neos": "~4.3.0",
-    "queo/sitepackage": "@dev",
-    "queo/forms": "@dev"
-  },
-  "scripts": {
-    "post-update-cmd": [
-      "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall"
+    "name": "queo/site",
+    "homepage": "https://www.homepage.com",
+    "description": "Website for some customer",
+    "license": "proprietary",
+    "config": {
+        "vendor-dir": "Packages/Libraries",
+        "bin-dir": "bin"
+    },
+    "require": {
+        "neos/neos": "~4.3.0",
+        "queo/sitepackage": "@dev",
+        "queo/forms": "@dev"
+    },
+    "scripts": {
+        "post-update-cmd": [
+            "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall"
+        ],
+        "post-install-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
+        "post-package-update": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall",
+        "post-package-install": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall"
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "DistributionPackages/*"
+        }
     ],
-    "post-install-cmd": "Neos\\Flow\\Composer\\InstallerScripts::postUpdateAndInstall",
-    "post-package-update": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall",
-    "post-package-install": "Neos\\Flow\\Composer\\InstallerScripts::postPackageUpdateAndInstall"
-  },
-  "repositories": [
-    {
-      "type": "path",
-      "url": "DistributionPackages/*"
+    "extra": {
+        "author": "Ralf Michael"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require-dev": {
+        "carbon/gulp": "dev-master"
     }
-  ],
-  "extra": {
-    "author": "Ralf Michael"
-  },
-  "minimum-stability": "dev",
-  "require-dev": {
-    "carbon/gulp": "dev-master"
-  }
 }
