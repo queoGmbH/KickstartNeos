@@ -1,6 +1,8 @@
 'Queo.SitePackage:Content.Headline':
   superTypes:
     'Neos.Neos:Content': true
+    'Queo.SitePackage:Mixin.BaseConventions': true
+
   ui:
     label: 'Überschrift'
     position: 10
@@ -11,3 +13,23 @@
       defaultValue: 'Überschrift'
       ui:
         inlineEditable: true
+    tagName:
+      type: string
+      defaultValue: 'h2'
+      ui:
+        label: 'Ebene'
+        reloadIfChanged: true
+        inspector:
+          group: default
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            allowEmpty: false
+            values:
+              h1:
+                label: 'h1'
+              h2:
+                label: 'h2'
+              h3:
+                label: 'h3'
+              h4:
+                label: 'h4'

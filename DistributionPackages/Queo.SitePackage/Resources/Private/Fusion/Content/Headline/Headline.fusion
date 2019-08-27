@@ -2,6 +2,7 @@ prototype(Queo.SitePackage:Content.Headline) < prototype(Neos.Neos:ContentCompon
     title = Neos.Neos:Editable {
         property = 'title'
     }
+    tagName = ${q(node).property('tagName') || 'h2'}
 
     renderer = Queo.SitePackage:Component.Atom.Headline {
         @apply.props = ${props}
