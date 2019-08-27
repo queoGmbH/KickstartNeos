@@ -1,24 +1,28 @@
 prototype(Queo.SitePackage:Component.Atom.Headline) < prototype(Neos.Fusion:Component) {
+    # fusion properties (public api)
+    title = null
+    tagName = 'h2'
+    class = ''
+    isHidden = false
+
     # styleguide annotation
     @styleguide {
-        title = 'Atom - Überschrift'
+        title = 'Überschrift'
         description = ''
         props {
             title = 'Hello World'
         }
         propSets {
             headline-2 {
-                tagName = 'h2'
                 title = 'Alternate styleguide content for h2'
+                tagName = 'h2'
             }
         }
     }
 
-    # fusion properties
-    tagName = 'h1'
-    title = ''
+    @if.showHeadline = ${this.title && !this.isHidden}
 
     renderer = afx`
-        <Neos.Fusion:Tag tagName={props.tagName}>{props.title}</Neos.Fusion:Tag>
+        <Neos.Fusion:Tag tagName={props.tagName} attributes.class={props.class}>{props.title}</Neos.Fusion:Tag>
     `
 }

@@ -3,12 +3,12 @@
 // - we are not allowed to use ContentComponent; but only Neos.Fusion:Component
 // - we do not use Eel here
 prototype(Queo.SitePackage:Component.Atom.Alert) < prototype(Neos.Fusion:Component) {
-    content = ""
-    style = ""
+    content = ''
+    style = ''
 
     # styleguide annotation für Monocle
     @styleguide {
-        title = 'Atom - Alert'
+        title = 'Alert'
         description = ''
         props {
             style = 'primary'
@@ -40,6 +40,4 @@ prototype(Queo.SitePackage:Component.Atom.Alert) < prototype(Neos.Fusion:Compone
 
     # Folgende Zeile sagt: "nur rendern, wenn "content"-Eigenschaft nicht leer ist"
     @if.isTrue = ${this.content}
-
-
 }

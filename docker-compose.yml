@@ -16,6 +16,7 @@ services:
       - ./composer.lock:/app/composer.lock:cached
       - ./Configuration/:/app/Configuration/:cached
       - ./DistributionPackages/:/app/DistributionPackages/:cached
+      - ./Data/Persistent:/app/Data/Persistent/:cached
       # if you work on other packages, you need to add them here.
       - ./Packages/Sites/:/app/Packages/Sites/:cached
       - ./Packages/Application/Queo.Forms:/app/Packages/Application/Queo.Forms/:cached
