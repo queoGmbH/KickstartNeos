@@ -30,5 +30,38 @@ services:
     ports:
       - 13306:3306
 
+  # Testing
+  codecept:
+    image: codeception/codeception:latest
+    depends_on:
+      - neos
+      - db
+      - chrome
+      - firefox
+    volumes:
+      - .:/project
+  selenium-hub:
+    image: selenium/hub:3.141.59-vanadium
+    container_name: selenium-hub
+    ports:
+      - "4444:4444"
+
+  chrome:
+    image: selenium/node-chrome:3.141.59-vanadium
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+
+  # Doesn't work
+  firefox:
+    image: selenium/node-firefox:3.141.59-vanadium
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+
 volumes:
   db:
