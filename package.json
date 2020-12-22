@@ -91,7 +91,7 @@
     "gulp-svg-sprite": "^1.5.0",
     "gulp-svgmin": "^2.2.0",
     "merge-stream": "^2.0.0",
-    "node-notifier": "^5.4.0",
+    "node-notifier": "^8.0.1",
     "node-sass": "^4.13.1",
     "node-sass-tilde-importer": "^1.0.2",
     "object-assign-deep": "^0.4.0",
