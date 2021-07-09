@@ -10,7 +10,7 @@
     "neos/redirecthandler-neosadapter": "^3.0",
     "neos/redirecthandler-ui": "^1.1",
 
-    "carbon/includeassets": "^3.5",
+    "carbon/includeassets": "^3.5 || ^4.0",
     "sitegeist/monocle": "^6.0",
 
     "neos/seo": "^3.0",
